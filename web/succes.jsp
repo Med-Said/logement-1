@@ -5,5 +5,6 @@
     <head>
     </head>
     <body>
-        <script> window.location.href ="http://localhost:8080/logement/" ; </script>    </body>
+        <script> window.location.href ="http://localhost:8080/logement/" ; </script>    
+    </body>
 </html>

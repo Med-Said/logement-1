@@ -7,36 +7,19 @@ package com.rimsoft.Model;
 
 //import javax.persistence.Column;
 
+import java.io.File;
 import java.util.List;
 
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.Id;
-//import javax.persistence.Table;
 
-/**
- *
- * @author Med Said M'bareck
- */
-//@Entity
-//@Table(name = "logement")
 public class LogementStore {
-//    @Id
-//    @GeneratedValue
+
     private int id;
-    
-//    @Column(name = "lieu")
     private String lieu;
-    
-//    @Column(name = "tel")
     private String tel;
-    
-//    @Column(name = "capacite")
     private String capacite;
-    
-//    @Column(name = "prix")
     private String prix;
-    
+    private String photo;
+    private File photoFile;
     private List<LogementStore> logements;
     
     //constructers
@@ -94,6 +77,22 @@ public class LogementStore {
 
     public void setPrix(String prix) {
         this.prix = prix;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public File getPhotoFile() {
+        return photoFile;
+    }
+
+    public void setPhotoFile(File photoFile) {
+        this.photoFile = photoFile;
     }
 
     public List<LogementStore> getLogements() {

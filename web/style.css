@@ -170,3 +170,12 @@ a.article:hover {
     }
 
 }
+
+
+/*
+input style
+*/
+input[type=text]{
+    width:500px; 
+    margin-bottom:30px;
+}

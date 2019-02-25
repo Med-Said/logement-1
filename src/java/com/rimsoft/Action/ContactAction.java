@@ -6,49 +6,34 @@
 package com.rimsoft.Action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.rimsoft.Model.LogementStore;
+import com.rimsoft.Model.ContactStore;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author Med Said M'bareck
  */
-public class LogementAction extends ActionSupport{
-    List<LogementStore> logements;
-    
+public class ContactAction extends ActionSupport{
+
+        private ContactStore contactStore;
+
     @Override
     public String execute() throws Exception {
-        logements = new ArrayList<>();
-        
         String result="error";
     Connection connection=null;
    try
    {
     Class.forName("com.mysql.jdbc.Driver");
     connection = DriverManager.getConnection("jdbc:mysql://localhost/logement?user=root&password=");
-    String sql = "SELECT * FROM logement";
-     
-    PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
- 
-    ResultSet resultset = preparedStatement.executeQuery();
-    while(resultset.next())
-      {
-       int id = resultset.getInt(1);
-       String lieu = resultset.getString(2);
-       String tel = resultset.getString(3);
-       String capacite = resultset.getString(4);
-       String prix = resultset.getString(5);
-       LogementStore ls = new LogementStore(id,lieu,tel,capacite,prix);
-       logements.add(ls);
-      result="success";
-      }//while
+    String sql = "INSERT INTO contact (tel,message) VALUES (?,?)";
+			PreparedStatement ps = connection.prepareStatement(sql);
+                        ps.setString(1, contactStore.getTel());
+			ps.setString(2, contactStore.getMessage());
+			ps.executeUpdate();
+    result="success";
      } //try
      catch (ClassNotFoundException | SQLException e)
      {
@@ -64,16 +49,21 @@ public class LogementAction extends ActionSupport{
           } //try
        catch (SQLException e)
        {
-        System.out.println(e);
         }//catch
       }//if
     }//finally
    return result;
-         
     }
 
-    public List<LogementStore> getLogements() {
-        return logements;
+    public ContactStore getContactStore() {
+        return contactStore;
     }
+
+    public void setContactStore(ContactStore contactStore) {
+        this.contactStore = contactStore;
+    }
+    
+    
+    
     
 }

@@ -18,58 +18,24 @@ import java.sql.SQLException;
  * @author Med Said M'bareck
  */
 public class AjouterAction extends ActionSupport{
-
-    public String getCapacite() {
-        return capacite;
-    }
-
-    public void setCapacite(String capacite) {
-        this.capacite = capacite;
-    }
-
-    public String getLieu() {
-        return lieu;
-    }
-
-    public void setLieu(String lieu) {
-        this.lieu = lieu;
-    }
-
-    public String getPrix() {
-        return prix;
-    }
-
-    public void setPrix(String prix) {
-        this.prix = prix;
-    }
-
-    public String getTel() {
-        return tel;
-    }
-
-    public void setTel(String tel) {
-        this.tel = tel;
-    }
-        
-        String capacite;
-        String lieu;
-        String prix;
-        String tel;
-
+    
+    private LogementStore logementStore;
+          
         @Override
     public String execute() throws Exception {
-        String result="error";
+    String result="error";
     Connection connection=null;
    try
    {
     Class.forName("com.mysql.jdbc.Driver");
-    connection = DriverManager.getConnection("jdbc:mysql://localhost/logement?user=root&password=toor");
+    connection = DriverManager.getConnection("jdbc:mysql://localhost/logement?user=root&password=");
     String sql = "INSERT INTO logement (capacite,lieu, prix, tel) VALUES (?,?,?,?)";
+
 			PreparedStatement ps = connection.prepareStatement(sql);
-                        ps.setString(1, capacite);
-			ps.setString(2, lieu);
-			ps.setString(3, prix);
-			ps.setString(4, tel);
+                        ps.setString(1, logementStore.getCapacite());
+			ps.setString(2, logementStore.getLieu());
+			ps.setString(3, logementStore.getPrix());
+			ps.setString(4, logementStore.getTel());
 			ps.executeUpdate();
     result="success";
      } //try
@@ -93,9 +59,13 @@ public class AjouterAction extends ActionSupport{
    return result;
 
     }
+    
 
+    public LogementStore getLogementStore() {
+        return logementStore;
+    }
 
-
-    public void setLogementBean(LogementStore logementBean) {
-    } 
+    public void setLogementStore(LogementStore logementStore) {
+        this.logementStore = logementStore;
+    }
 }

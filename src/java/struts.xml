@@ -4,18 +4,18 @@
 
 <struts>
     <package name="default" extends="struts-default">
-
         <action name="index" class="com.rimsoft.Action.LogementAction" method="execute">
             <result name="success">/index.jsp</result>
         </action>
 
-
         <action  name="ajouter" class="com.rimsoft.Action.AjouterAction" method="execute">
             <result name="success" >/succes.jsp</result>
-            <result name="error">ajouter.jsp</result>
+            <result name="error">/ajoute.jsp</result>
         </action>
         
-        
-
+        <action  name="contact" class="com.rimsoft.Action.ContactAction" method="execute">
+            <result name="success" >/pages/s.jsp</result>
+            <result name="error">/pages/contact.jsp</result>
+        </action>
     </package>  
 </struts>
