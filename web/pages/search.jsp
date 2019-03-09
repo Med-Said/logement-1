@@ -57,11 +57,11 @@
                 <div class="form-row">
                         <label for="minPrix" class="col-md-2 col-form-label">Prix de</label>
 			<div class="form-group col-md-4">
-				<s:textfield required="true" id="minPrix" name="logementStore.minPrix"  cssClass="form-control"  placeholder=""/>
+				<s:textfield required="true" id="minPrix" name="logementStore.minPrix"  cssClass="form-control"  placeholder="ex : 100"/>
 			</div>
                         <label for="maxPrix" class="col-md-1 col-form-label">à</label>
 			<div class="form-group col-md-5">
-				<s:textfield required="true" id="maxPrix" name="logementStore.maxPrix"  class="inputStyle" cssClass="form-control" placeholder=""/>
+				<s:textfield required="true" id="maxPrix" name="logementStore.maxPrix"  class="inputStyle" cssClass="form-control" placeholder="ex : 350"/>
 			</div>
 		</div>
                     
