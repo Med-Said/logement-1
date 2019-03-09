@@ -22,6 +22,9 @@ public class LogementStore {
     private File photoFile;
     private List<LogementStore> logements;
     
+    private String minPrix;
+    private String maxPrix;
+    
     //constructers
     public LogementStore() {
         this.lieu = "";
@@ -87,6 +90,25 @@ public class LogementStore {
         this.photo = photo;
     }
 
+    public String getMinPrix() {
+        return minPrix;
+    }
+
+    public void setMinPrix(String minPrix) {
+        this.minPrix = minPrix;
+    }
+
+    public String getMaxPrix() {
+        return maxPrix;
+    }
+
+    public void setMaxPrix(String maxPrix) {
+        this.maxPrix = maxPrix;
+    }
+
+    
+    
+    
     public File getPhotoFile() {
         return photoFile;
     }

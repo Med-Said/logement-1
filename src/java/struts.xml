@@ -17,5 +17,13 @@
             <result name="success" >/pages/s.jsp</result>
             <result name="error">/pages/contact.jsp</result>
         </action>
+        
+        
+        
+        <action  name="search" class="com.rimsoft.Action.SearchAction" method="execute">
+            <result name="success" >/pages/searchResult.jsp</result>
+            <result name="error">/pages/error.jsp</result>
+        </action>
+        
     </package>  
 </struts>
