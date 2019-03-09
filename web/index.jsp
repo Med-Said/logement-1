@@ -96,6 +96,21 @@ div.desc {
                         <i class="fas fa-align-left"></i>
                         <span>menu</span>
                     </button>
+                    
+                    
+                    
+                    
+<!--                    search button -->
+                    
+                    <a href="pages/search.jsp">
+                        
+                    <button  style="margin-left: 30px;"  type="button" id="sidebarCollapse" class="btn btn-success">
+                        <i class="fas fa-align-center"></i>
+                        <span>recherche</span>
+                    </button>
+                    </a>
+                    
+
 
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -119,7 +134,7 @@ div.desc {
                 <div class="desc">
                     <table >
                         <tr> 
-                            <td >Capacité:</td>
+                            <td >Capacit?:</td>
                             <td><s:property value="capacite" ></s:property></td>
                         </tr>
                        <tr> 

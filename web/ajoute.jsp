@@ -25,24 +25,7 @@
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-
-                    
-
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
-                               <button  type="button"  class="btn btn-success">
-                        <i class="fas fa-align-left"></i>
-                        <span>  <a style="text-decoration: none;"href="succes.jsp" > accueil</a>  </span>
-                    </button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+            <jsp:include page="pages/partials/minNav.jsp" />
             <div class="row">
             <div class="col-3"></div> 
             <table >          
